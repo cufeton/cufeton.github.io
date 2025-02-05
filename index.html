@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Tus mochilas online!</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link href="assets/indexCss.css" rel="stylesheet">
+    <link href="assets/indexJS.js" rel="mainJS">
+</head>
+
+<body>
+<div class="colorFondo" style="padding-top: 5%;">
+    <div class="mb-3 presentacion">
+        <h1 class="titulo">¡Bienvenidos a tTlo™ tus mochilas de calidad!</h1>
+    </div>
+    <div class="container mt-5 catalogoMochilas">
+        <p> A continuación encontraras un formulario para hacer las reservas de tu mochila,<br>
+            elige unidades, color y rellena el formulario con tus datos.
+        </p>
+        <select class="btn-secondary" arial-label="cantidades">
+            <option value="1">1 Unidad/s</option>
+            <option value="2"> 2 Unidad/s </option>
+            <option value="4"> 5 Unidad/s</option>
+        </select>
+        <select class="btn-primary " arial-label="cantidades">
+            <option value="1">Mochila para clase</option>
+            <option value="2">Maleta de cuero para portar documentos</option>
+            <option value="4">Mochila de deporte</option>
+        </select>
+        <form class="formulario">
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="nombre" class="form-label">Nombre y Apellido</label>
+                    <input type="text" class="form-control" id="nombre1" placeholder="Ingresa tu nombre completo">
+                </div>
+                <div class="col-md-6">
+                    <label for="direccion" class="form-label">Dirección de envio</label>
+                    <input type="text" class="form-control" id="nombre1"
+                        placeholder="Ingresa la dirección donde recibiras tu compra" required>
+
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="text" class="form-control" id="email1"
+                        placeholder="Ingresa tu mail para recibir comprobante de compra" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="telefono" class="form-label">Te enviaremos al telefono el numero de seguimiento</label>
+                    <input type="tel" class="form-control" id="telefono1" placeholder="Añade tu número movil" required>
+                </div>
+            </div>
+            <button class="btn2 btn-succes btn-lg">Comprar </button>
+        </form>
+    </div>
+</div>
+    <!--<nav> se usa para crear un menú de navegacion que te redirige a subsecciones dentro de la propia página web// con target="_blank" hacemos que abra esta subsección en una nueva pestaña.-->
+    <nav class="navbarEnlaces navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <ul class="nav navMenu">
+                <li class="nav-item navCatalogo"><a class="nav-link" href="#tablaMochilas" src="">Catálogo de
+                        mochilas</a></li>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <li class="nav-item navFormulario"><a class="nav-link" href="assets/formulario.html"
+                        target="_blank">Seguimiento de tus pedidos</a></li>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <li class="nav-item navContacta"><a class="nav-link" href="assets/contacta.html" target="_blank">Contacta con
+                        nosotros</a></li>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <li class="nav-item navPolitica"><a class="nav-link"
+                        href="https://europa.eu/youreurope/business/selling-in-eu/selling-goods-services/selling-products-eu/index_es.htm"
+                        target="_blank">Politica de compra, ventas y envios UE.</a></li>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <input type="text" id="Buscador" onkeyup="funcionBuscador()" placeholder="Buscar..." 
+                    title="Encuentra tu mochila">  <!--Para hacer este <input, Buscador> me ayude de (https://www.w3schools.com/HOWTO/howto_js_search_menu.asp)-->
+
+                <li class="nav-item navPrecios"><a class="nav-link" href="assets/precios.html" target="_blank">Precios</a></li>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                </button>
+            </ul>
+        </div>
+    </nav>
+    <div class="row mb-3 contenedorTextos">
+        <div class="texto1 col-md-6 bg-secondary text-dark">
+            <p class=texto1>En catálogo de mochilas puedes encontrar distintos tipos de mochila, para estudiar, para
+                portar documentos y para hacer deporte.</p>
+        </div>
+        <div class="texto2 col-md-6 bg-secondary text-dark">
+            <p class="texto2">En formulario de registro de usuarios puedes registrar tus datos para que te avisemos de
+                las nuevos modelos de mochilas.</p>
+        </div>
+        <h1 class="destacadas">Nuestras mochilas más destacadas son:</h1>
+        <div class="row table-lg table-bordered" id="tablaMochilas">
+            <div class="tablaMochilaClase col-md-4 table-bordered">
+                <p>Mochila de clase</p><br>
+                <button type="button" class="btnClase btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#staticBackdrop">Ver mochila</button>
+                <div class="modal fade modalClase" data-bs-backdrop="static" data-bs-keyboard="false"
+                    id="staticBackdrop" tabindex="-1" arial-labelledby="staticBackdropLabel" aria-idden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <h5 class="content1">En stock</h5>
+                            <div class="modal-header">
+                                <h5 class="modal-title fs-5" id="textoModalMochila1">¡Disponible en Negro, Beige y
+                                    verde!</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <img src="assets/images/mochila_para_clase.jpg" width="475px" rel="mochila1Imagen">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tablaMaletaCuero col-md-4 table-bordered">
+                <p>Maleta de cuero para documentos de trabajo</p><br>
+                <button type="button" class="btnCuero btn-succes" data-bs-toggle="modal" 
+                data-bs-target="#staticBackdrop2">Ver Maletín</button>
+                <div class="modal fade modalCuero" data-bs-backdrop="static" data-bs-keyboard="false" id="staticBackdrop2"
+                    tabindex="-1" aria-labelledby="statickBackdropLabel" aria-idden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <h5 class="content2">En stock</h5>
+                            <div class="modal-header">
+                                <h5 class="modal-title fs-5" id="textoModalMochila2">¡Opción de cuero vegano disponible!</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close">
+                                </button>
+                            </div>
+                            <div class="modal-body bodyCuero">
+                                <img src="assets/images/maleta_para_portar_documentos.jpg" rel="mochila2Imagen">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tablaMochilaDeporte col-md-4 table-bordered">
+                <p>Mochila de deportes de gran dimensión</p><br>
+                <button type="button" class="btnDeporte btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#staticBackdrop3">Ver mochila</button>
+                <div class="modal fade modalDeporte" data-bs-backdrop="static" data-bs-keyboard="false"
+                    id="staticBackdrop3" tabindex="-1" arial-labelledby="staticBackdropLabel" aria-idden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <h5 class="content3">En stock//Oferta promocional</h5>
+                            <div class="modal-header">
+                                <h5 class="modal-title fs-5" id="textoModalMochila3">¡Incluye set raquetas de padel!</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close">
+                                </button>
+                            </div>
+                            <div class="modal-body bodyDeporte">
+                                <img src="assets/images/mochila_de_deporte.jpg" width="370px" rel="mochila3Imagen">
+                            </div>
+                        </div>
+                    </div>
+                </div>               
+            </div>
+            <div class="tablaBolsaTela col-md-4 table-bordered">
+                <p>Bolsa de tela de mano</p><br>
+                <button type="button" class="btnTela btn-secondary" data-bs-toggle="modal"
+                data-bs-target="#staticBackdrop4">Ver bolsa</button>
+            <div class="modal fade modalTela" data-bs-backdrop="static" data-bs-keyboard="false"
+                id="staticBackdrop4" tabindex="-1" arial-labelledby="staticBackdropLabel" aria-idden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <h5 class="content4">Agotada</h5>
+                        <div class="modal-header">
+                            <h5 class="modal-title fs-5" id="textoModalMochila4">¡Nuevas unidades pronto!</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Close">
+                            </button>
+                        </div>
+                            <div class="modal-body bodyTela">
+                            </div>
+                        </div>
+                     </div>
+                 </div>               
+             </div>
+            <div class="tablaNeceser col-md-4 table-bordered">
+                <p>Porta-Neceser</p><br>
+                <button type="button" class="btnNeceser btn-secondary" data-bs-toggle="modal"
+                data-bs-target="#staticBackdrop5">Ver neceser</button>
+            <div class="modal fade modalNeceser" data-bs-backdrop="static" data-bs-keyboard="false"
+                id="staticBackdrop5" tabindex="-1" arial-labelledby="staticBackdropLabel" aria-idden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <h5 class="content5">Agotada</h5>
+                        <div class="modal-header">
+                            <h5 class="modal-title fs-5" id="textoModalMochila5">¡Nuevas unidades pronto!</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Close">
+                            </button>
+                        </div>
+                            <div class="modal-body bodyNeceser">
+                            </div>
+                        </div>
+                     </div>
+                 </div>               
+
+                
+                
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/indexJS.js"></script>
+</body>
+
+</html>
