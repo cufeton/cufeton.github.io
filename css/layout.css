@@ -1,0 +1,23 @@
+main{margin:3%; margin-top:0;align-items: center;}
+#principal-header{position:sticky;top:0;width:100%;z-index:10000;}
+.inactivo{visibility: hidden;}
+.img-proyecto{width: 95%; height: 300px; border-radius: 21px 21px 0 0;}
+.a-proyectos:link {
+    color: black; /* Color del enlace sin visitar */
+    text-decoration: none; 
+  }
+  
+  .a-proyectos:visited {
+    color: black; /* Color del enlace después de ser visitado */
+    text-decoration: none;
+  }
+  
+  .a-proyectos:hover {
+    color: black; /* Color del enlace al pasar el ratón por encima */
+    text-decoration: underline;
+  }
+  
+  .a-proyectos:active {
+    color: blue; /* Color del enlace al hacer clic */
+    text-decoration: none;
+  }
